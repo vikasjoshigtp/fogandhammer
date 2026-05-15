@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Fog &amp; Hammer — National Design &amp; Signage Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0C0B09; --sf:#141311; --sf2:#1D1B18; --sf3:#232118;
+  --bd:rgba(220,210,190,0.09); --bd2:rgba(220,210,190,0.18); --bd3:rgba(220,210,190,0.28);
+  --tx:#EDE8DE; --tm:#8A8278; --td:#524E47;
+  --ac:#C4975A; --al:#E0B97A; --ad:#9A7240;
+  --ab:rgba(196,151,90,0.07); --ab2:rgba(196,151,90,0.13);
+  --wh:#F5EFE3;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--tx);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5rem;background:rgba(12,11,9,0.95);backdrop-filter:blur(14px);border-bottom:0.5px solid var(--bd)}
+.nl{display:flex;align-items:baseline;gap:.2rem;text-decoration:none}
+.nl-f{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;letter-spacing:.04em;color:var(--wh)}
+.nl-a{color:var(--ac);font-size:1.3rem;margin:0 .25rem}
+.nl-h{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;letter-spacing:.04em;color:var(--wh)}
+.nv{display:flex;gap:2.5rem;list-style:none}
+.nv a{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--td);text-decoration:none;transition:color .2s}
+.nv a:hover{color:var(--ac)}
+.nc{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.65rem 1.6rem;border:.5px solid var(--ac);color:var(--ac);background:transparent;cursor:pointer;transition:all .22s;text-decoration:none}
+.nc:hover{background:var(--ac);color:var(--bg)}
+
+/* SHARED */
+section{padding:8rem 5rem}
+.wrap{max-width:1240px;margin:0 auto}
+.ey{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:1.75rem;display:flex;align-items:center;gap:1rem}
+.ey::before{content:'';width:2.5rem;height:.5px;background:var(--ac)}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.12;letter-spacing:.01em}
+h1{font-size:clamp(3.2rem,6vw,5.8rem);color:var(--wh)}
+h2{font-size:clamp(2.2rem,4vw,3.8rem);color:var(--wh)}
+h3{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:400;color:var(--wh);margin-bottom:.8rem}
+p{color:var(--tm);line-height:1.85}
+.bp{display:inline-block;padding:1rem 2.75rem;background:var(--ac);color:var(--bg);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .22s}
+.bp:hover{background:var(--al)}
+.bo{display:inline-block;padding:1rem 2.75rem;border:.5px solid var(--bd2);color:var(--tm);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .22s}
+.bo:hover{border-color:var(--ac);color:var(--ac)}
+
+/* HERO — full-width, no stat panel */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:9rem;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;top:-10%;right:-5%;width:60%;height:90%;background:radial-gradient(ellipse at 65% 35%,rgba(196,151,90,.07) 0%,transparent 68%);pointer-events:none}
+#hero::after{content:'F&H';position:absolute;right:-1rem;bottom:-2rem;font-family:'Cormorant Garamond',serif;font-size:clamp(14rem,26vw,26rem);font-weight:600;color:rgba(196,151,90,.04);letter-spacing:-.04em;line-height:1;pointer-events:none;user-select:none}
+.hi{display:grid;grid-template-columns:1.2fr .8fr;gap:6rem;align-items:center;width:100%;max-width:1240px;margin:0 auto}
+.hk{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:2.25rem;display:flex;align-items:center;gap:1rem}
+.hk::before{content:'';width:3.5rem;height:.5px;background:var(--ac)}
+.hl h1{margin-bottom:2.25rem}
+.hl h1 em{font-style:italic;color:var(--al);display:block}
+.hd{font-size:1.1rem;color:var(--tm);max-width:560px;margin-bottom:3.25rem;line-height:1.95}
+.ha{display:flex;gap:1.25rem;flex-wrap:wrap}
+/* hero right — four service pillars */
+.hpillars{display:flex;flex-direction:column;gap:1px}
+.hpillar{padding:1.75rem 2.25rem;background:var(--sf);border:.5px solid var(--bd);display:flex;align-items:center;gap:1.5rem;transition:background .22s;position:relative;overflow:hidden}
+.hpillar::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--ac);opacity:0;transition:opacity .22s}
+.hpillar:hover{background:var(--sf2)}
+.hpillar:hover::before{opacity:1}
+.hpnum{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:rgba(196,151,90,.25);font-weight:300;line-height:1;flex-shrink:0;width:2rem}
+.hptxt{}
+.hptit{font-size:.82rem;font-weight:500;color:var(--wh);letter-spacing:.03em;margin-bottom:.2rem}
+.hpsub{font-size:.75rem;color:var(--td);letter-spacing:.02em}
+
+/* ABOUT */
+#about{background:var(--sf)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:start}
+.about-body p{margin-bottom:1.3rem;font-size:1rem}
+.about-body p:last-child{margin-bottom:0}
+.ap{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.35rem;color:var(--wh);margin-top:2.5rem;border-left:2px solid var(--ac);padding:.25rem 0 .25rem 1.75rem;line-height:1.6}
+.avs{display:flex;flex-direction:column;gap:0}
+.av{display:flex;align-items:flex-start;gap:1rem;font-size:.95rem;color:var(--tm);padding:1.25rem 0;border-bottom:.5px solid var(--bd)}
+.av:first-child{padding-top:0}
+.av:last-child{border-bottom:none}
+.av-dash{color:var(--ac);flex-shrink:0;font-size:1rem;margin-top:.08rem}
+.av-body{}
+.av-title{font-weight:500;color:var(--wh);font-size:.88rem;letter-spacing:.03em;margin-bottom:.2rem}
+.av-desc{font-size:.84rem;color:var(--td);line-height:1.6}
+
+/* SERVICES */
+#services{background:var(--bg)}
+.sh{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd)}
+.sc{background:var(--sf);padding:2.75rem 2.25rem;transition:background .25s;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--ac);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.sc:hover{background:var(--sf2)}
+.sc:hover::after{transform:scaleX(1)}
+.scn{font-family:'Cormorant Garamond',serif;font-size:5rem;color:rgba(196,151,90,.07);font-weight:300;line-height:1;margin-bottom:1.5rem}
+.sc h3{font-size:1.45rem;margin-bottom:.9rem}
+.sc p{font-size:.9rem;margin-bottom:1.75rem;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto}
+.tag{font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);border:.5px solid rgba(196,151,90,.28);padding:.35rem .85rem;background:var(--ab)}
+
+/* PORTFOLIO */
+#portfolio{background:var(--sf)}
+.ph{margin-bottom:4.5rem}
+.pcats{display:flex;gap:0;border:.5px solid var(--bd);margin-bottom:3rem;overflow:hidden}
+.pcat{flex:1;padding:1rem .75rem;background:transparent;border:none;border-right:.5px solid var(--bd);color:var(--td);font-family:'Outfit',sans-serif;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .25s;text-align:center}
+.pcat:last-child{border-right:none}
+.pcat.on{background:var(--ab2);color:var(--al);border-bottom:2px solid var(--ac)}
+.pcat:hover:not(.on){color:var(--tm);background:var(--sf2)}
+.ppanel{display:none}
+.ppanel.on{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);animation:fi .4s ease}
+@keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.pw{background:var(--bg);padding:2.25rem;transition:background .22s;display:flex;flex-direction:column;gap:.75rem}
+.pw:hover{background:var(--sf2)}
+.pwi{width:100%;aspect-ratio:16/10;background:var(--sf3);display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;font-family:'Cormorant Garamond',serif;font-size:3rem;color:rgba(196,151,90,.15);font-weight:300}
+.pw h4{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--wh)}
+.pw p{font-size:.83rem;color:var(--td);line-height:1.6}
+.pw-tag{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);border:.5px solid rgba(196,151,90,.22);padding:.3rem .7rem;background:var(--ab);display:inline-block;width:fit-content}
+
+/* INDUSTRIES */
+#industries{background:var(--bg)}
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);margin-top:4.5rem}
+.ic{background:var(--sf);padding:2.75rem 2.25rem;display:flex;flex-direction:column;gap:.8rem;transition:background .22s}
+.ic:hover{background:var(--sf2)}
+.ico{font-size:1.8rem}
+.ic h3{font-size:1.3rem;margin-bottom:0}
+.icd{font-size:.87rem;color:var(--td)}
+.il{list-style:none;font-size:.83rem;color:var(--tm);display:flex;flex-direction:column;gap:.45rem;margin-top:.5rem}
+.il li{display:flex;align-items:flex-start;gap:.6rem}
+.il li::before{content:'↗';color:var(--ac);font-size:.7rem;flex-shrink:0;margin-top:.18rem}
+
+/* SOFTWARE */
+#software{background:var(--sf)}
+.swi{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:5.5rem;align-items:end}
+.swcs{display:flex;flex-direction:column;gap:3rem}
+.swcl{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ac);margin-bottom:1.4rem;display:flex;align-items:center;gap:1rem}
+.swcl::after{content:'';flex:1;height:.5px;background:var(--bd)}
+.sps{display:flex;flex-wrap:wrap;gap:.7rem}
+.sp{font-size:.81rem;padding:.55rem 1.3rem;border:.5px solid var(--bd2);color:var(--tm);background:var(--bg);letter-spacing:.03em;transition:all .2s;cursor:default}
+.sp:hover{border-color:var(--ac);color:var(--ac);background:var(--ab)}
+.sp.hi{background:var(--ab2);border-color:rgba(196,151,90,.38);color:var(--al)}
+
+/* WORKFLOW */
+#workflow{background:var(--bg)}
+.wph{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:4rem;align-items:end}
+.wtabs{display:flex;gap:0;border:.5px solid var(--bd);margin-bottom:3.5rem;overflow:hidden}
+.wtab{flex:1;padding:1rem;background:transparent;border:none;border-right:.5px solid var(--bd);color:var(--td);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .25s;text-align:center;font-family:'Outfit',sans-serif}
+.wtab:last-child{border-right:none}
+.wtab.on{background:var(--ab2);color:var(--al);border-bottom:2px solid var(--ac)}
+.wtab:hover:not(.on){color:var(--tm);background:var(--sf2)}
+.wpanel{display:none}
+.wpanel.on{display:block;animation:fi .35s ease}
+.wsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd)}
+.wstep{background:var(--sf);padding:2.25rem 1.75rem;transition:background .22s}
+.wstep:hover{background:var(--sf2)}
+.wsn{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ac);margin-bottom:1.25rem;display:block}
+.wstep h3{font-size:1.2rem;margin-bottom:.6rem}
+.wstep p{font-size:.87rem;color:var(--td)}
+
+/* WHY */
+#why{background:var(--sf)}
+.wyg{display:grid;grid-template-columns:1fr 1fr;gap:4rem 6rem;margin-top:4.5rem}
+.wyr{width:2.5rem;height:2px;background:var(--ac);margin-bottom:1.75rem}
+.wyi h3{font-size:1.5rem;margin-bottom:.85rem}
+.wyi p{font-size:.95rem}
+
+/* CTA */
+#cta{background:var(--ac);padding:7.5rem 5rem;text-align:center;position:relative;overflow:hidden}
+#cta::before{content:'F&H';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-size:28rem;font-weight:600;color:rgba(12,11,9,.05);letter-spacing:-.04em;line-height:1;pointer-events:none;user-select:none;white-space:nowrap}
+#cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4.5vw,4rem);color:var(--bg);font-weight:300;margin-bottom:1.75rem;line-height:1.15;position:relative}
+#cta p{color:rgba(12,11,9,.55);margin-bottom:3.25rem;font-size:1.05rem;max-width:580px;margin-left:auto;margin-right:auto;position:relative}
+.cas{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;position:relative}
+.bdk{display:inline-block;padding:1.1rem 2.75rem;background:var(--bg);color:var(--al);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:background .22s}
+.bdk:hover{background:#1a1917}
+.bdo{display:inline-block;padding:1.1rem 2.75rem;border:.5px solid rgba(12,11,9,.28);color:var(--bg);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .22s}
+.bdo:hover{background:rgba(12,11,9,.1)}
+
+/* FOOTER */
+footer{background:var(--bg);padding:5rem;border-top:.5px solid var(--bd)}
+.fi{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem}
+.fl{display:flex;align-items:baseline;gap:.15rem;margin-bottom:1.25rem}
+.flo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--tx)}
+.fla{color:var(--ac);font-size:1.25rem;margin:0 .2rem}
+.flh{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--tx)}
+.fb p{font-size:.87rem;color:var(--td);max-width:290px;line-height:1.8}
+.fcol h4{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ac);margin-bottom:1.6rem}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:.85rem}
+.fcol ul li a{font-size:.87rem;color:var(--td);text-decoration:none;transition:color .2s}
+.fcol ul li a:hover{color:var(--ac)}
+.fbot{max-width:1240px;margin:3.5rem auto 0;padding-top:2.25rem;border-top:.5px solid var(--bd);display:flex;justify-content:space-between;align-items:center}
+.fbot p{font-size:.77rem;color:var(--td)}
+
+@media(max-width:960px){
+  nav{padding:1rem 1.75rem}.nv{display:none}
+  section{padding:5rem 1.75rem}
+  .hi,.ag,.sh,.swi,.wph{grid-template-columns:1fr;gap:3rem}
+  .sg,.ig,.wsteps,.wyg{grid-template-columns:1fr}
+  .ppanel.on{grid-template-columns:1fr 1fr}
+  .fi{grid-template-columns:1fr 1fr}
+  #cta{padding:5rem 1.75rem}
+  #hero::after,#cta::before{font-size:8rem}
+  .pcats{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nl" href="#">
+    <span class="nl-f">Fog</span><span class="nl-a">&amp;</span><span class="nl-h">Hammer</span>
+  </a>
+  <ul class="nv">
+    <li><a href="#about">Studio</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#software">Tools</a></li>
+    <li><a href="#workflow">Process</a></li>
+  </ul>
+  <a class="nc" href="#cta">Start a Project</a>
+</nav>
+
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hi">
+    <div class="hl">
+      <div class="hk">Signage · Premedia · Branding · Packaging</div>
+      <h1>Some Studios<br>Follow Trends.<em>We Build Foundations.</em></h1>
+      <p class="hd">Fog &amp; Hammer is a national design studio delivering signage programs, brand identities, pre-media production, and packaging design for US retailers, restaurant groups, hotel brands, banks, and specialty chains — from concept through to vendor-ready files.</p>
+      <div class="ha">
+        <a class="bp" href="#cta">Start a Project</a>
+        <a class="bo" href="#portfolio">View Our Work</a>
+      </div>
+    </div>
+    <div class="hpillars">
+      <div class="hpillar"><span class="hpnum">01</span><div class="hptxt"><div class="hptit">Signage &amp; Brand Books</div><div class="hpsub">Presentation drawings · Fabrication specs · LED estimation</div></div></div>
+      <div class="hpillar"><span class="hpnum">02</span><div class="hptxt"><div class="hptit">Pre-Media &amp; Repro</div><div class="hpsub">Artwork management · Preflight · Press-ready release</div></div></div>
+      <div class="hpillar"><span class="hpnum">03</span><div class="hptxt"><div class="hptit">Packaging Design &amp; 3D</div><div class="hpsub">Keyline to pack-shot · Labels · Cartons · Pouches</div></div></div>
+      <div class="hpillar"><span class="hpnum">04</span><div class="hptxt"><div class="hptit">Brand Identity &amp; Print</div><div class="hpsub">Logos · Guidelines · Advertising · Collateral</div></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="ag">
+      <div class="about-body">
+        <div class="ey">The Studio</div>
+        <h2 style="margin-bottom:2rem">Where Ideas<br>Get Made Real.</h2>
+        <p>Fog &amp; Hammer is a brand and design studio built for companies that operate at national scale — retailers, restaurant groups, hotel brands, financial institutions, and specialty chains that need design work that holds up everywhere they do business.</p>
+        <p>The fog is where ideas form. The strategy, the concept, the creative thinking that makes a brand distinct. The hammer is how those ideas hit the world — production-engineered, technically precise, and built to perform across every location, every format, and every market.</p>
+        <p>From presentation drawings and brand books for signage programs, to packaging keylines with 3D renderings, to structured pre-media workflows with multi-level QC — we handle the full pipeline. Our production team works across the full Adobe Creative Suite, CorelDRAW, InDesign, Esko ArtPro+, SAi FlexiSIGN, Enfocus PitStop Pro, Pantone Connect, and every major signage and pre-media platform.</p>
+        <p class="ap">Deliberate. Durable. Built for the long game.</p>
+      </div>
+      <div class="avs">
+        <div class="av">
+          <span class="av-dash">—</span>
+          <div class="av-body">
+            <div class="av-title">Full Signage Programs</div>
+            <div class="av-desc">Presentation drawings, brand books, sign schedules, code analysis, and fabrication specs for every sign type.</div>
+          </div>
+        </div>
+        <div class="av">
+          <span class="av-dash">—</span>
+          <div class="av-body">
+            <div class="av-title">Structured Pre-Media Workflows</div>
+            <div class="av-desc">Artwork creation through multi-level QC, preflight, final overlook, and press-release to printer — documented at every handoff.</div>
+          </div>
+        </div>
+        <div class="av">
+          <span class="av-dash">—</span>
+          <div class="av-body">
+            <div class="av-title">Packaging — Keyline to Pack-Shot</div>
+            <div class="av-desc">Structural dielines, print-ready artwork, and photorealistic 3D renders for every packaging format.</div>
+          </div>
+        </div>
+        <div class="av">
+          <span class="av-dash">—</span>
+          <div class="av-body">
+            <div class="av-title">Brand Identity &amp; Multi-Market Rollout</div>
+            <div class="av-desc">Visual systems built to stay consistent — across locations, formats, languages, and regulatory environments.</div>
+          </div>
+        </div>
+        <div class="av">
+          <span class="av-dash">—</span>
+          <div class="av-body">
+            <div class="av-title">One Studio. Full Pipeline.</div>
+            <div class="av-desc">Signage, premedia, packaging, identity, and print — under one quality standard, from concept to vendor-ready file.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sh">
+      <div>
+        <div class="ey">What We Do</div>
+        <h2>Our Services</h2>
+      </div>
+      <p style="font-size:1.05rem;line-height:1.9">From presentation drawings to press-ready files, we handle every stage of the visual production process — one team, one standard, zero gaps between design and execution.</p>
+    </div>
+    <div class="sg">
+      <div class="sc">
+        <div class="scn">01</div>
+        <h3>Signage Design &amp; Brand Books</h3>
+        <p>Full signage programs covering site plans, sign schedules, code analysis, and fabrication drawings for every sign type — channel letters, monument signs, pylon signs, directional signs, architectural signs, LED displays, and glass wall systems.</p>
+        <div class="tags">
+          <span class="tag">Presentation Drawings</span><span class="tag">Brand Books</span><span class="tag">Sign Schedules</span><span class="tag">Code Analysis</span><span class="tag">Monument Signs</span><span class="tag">Pylon Signs</span><span class="tag">Channel Letters</span><span class="tag">Wayfinding</span>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="scn">02</div>
+        <h3>Custom Fabrication &amp; LED</h3>
+        <p>Technical production drawings for custom-fabricated signage — illuminated channel letters, raceway-mounted signs, cabinet signs, LED screen enclosures, TV enclosures, and glass wall attachment systems. LED estimation via LED Wizard and AutoCAD.</p>
+        <div class="tags">
+          <span class="tag">Illuminated Channel Letters</span><span class="tag">LED Estimation</span><span class="tag">TV Enclosures</span><span class="tag">Glass Wall Systems</span><span class="tag">Cabinet Signs</span><span class="tag">Fabrication Specs</span>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="scn">03</div>
+        <h3>Pre-Media &amp; Repro Production</h3>
+        <p>End-to-end artwork production — from client brief through artwork creation, multi-level QC, preflight, final overlook, and printer-ready file release. Both artwork and repro workflows handled with structured, documented handoffs at every stage.</p>
+        <div class="tags">
+          <span class="tag">Artwork Management</span><span class="tag">Preflight &amp; QA</span><span class="tag">PDF/X Output</span><span class="tag">Color Management</span><span class="tag">Repro &amp; Press-Ready</span><span class="tag">Pantone Matching</span>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="scn">04</div>
+        <h3>Packaging Design &amp; 3D Rendering</h3>
+        <p>Keyline-to-finished-product pipeline for every packaging format — bottle labels, pouches, gable-top cartons, folding cartons, tubs, and display boxes. Includes structural dielines, print-ready artwork, and photorealistic 3D pack-shot renders.</p>
+        <div class="tags">
+          <span class="tag">Bottle Labels</span><span class="tag">Pouches &amp; Sachets</span><span class="tag">Folding Cartons</span><span class="tag">3D Pack-Shots</span><span class="tag">360° Renders</span><span class="tag">eCommerce Ready</span>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="scn">05</div>
+        <h3>Brand Identity &amp; Localization</h3>
+        <p>Visual identity systems built for national brands — logos, brand guidelines, color and typography systems, and multi-market localization. Assets adapted for different languages, regions, and regulatory requirements without losing brand consistency.</p>
+        <div class="tags">
+          <span class="tag">Logo &amp; Identity</span><span class="tag">Brand Guidelines</span><span class="tag">Multi-Market Rollout</span><span class="tag">Localization</span><span class="tag">Brand Standards</span><span class="tag">Graphic Frameworks</span>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="scn">06</div>
+        <h3>Print Advertising &amp; Collateral</h3>
+        <p>Production-ready print advertising, point-of-sale displays, promotional flyers, menus, stationery, and retail branding — built to vendor specification with image processing, print-ready enhancements, and structured QC before every release.</p>
+        <div class="tags">
+          <span class="tag">Newspaper &amp; Magazine Ads</span><span class="tag">POS &amp; POP Displays</span><span class="tag">Menus &amp; Brochures</span><span class="tag">Retail Branding</span><span class="tag">Billboards</span><span class="tag">Stationery</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="wrap">
+    <div class="ph">
+      <div class="ey">Our Work</div>
+      <h2>Selected Portfolio</h2>
+      <p style="max-width:600px;margin-top:1rem">Real deliverables. Every project below is production-level work — designed, preflighted, and released to print or fabrication.</p>
+    </div>
+    <div class="pcats">
+      <button class="pcat on" onclick="showP('signage',this)">Signage &amp; Brand Books</button>
+      <button class="pcat" onclick="showP('packaging',this)">Packaging</button>
+      <button class="pcat" onclick="showP('premedia',this)">Pre-Media &amp; Print</button>
+      <button class="pcat" onclick="showP('brand',this)">Brand Identity</button>
+    </div>
+
+    <div class="ppanel on" id="pp-signage">
+      <div class="pw"><div class="pwi">Monument</div><span class="pw-tag">Brand Book · Sign Program</span><h4>Illuminated D/F Monument Sign</h4><p>Double-faced illuminated monument sign with code analysis, existing vs. proposed comparison, full elevation drawings, and simulated night-view renders.</p></div>
+      <div class="pw"><div class="pwi">Pylon</div><span class="pw-tag">Brand Book · Sign Program</span><h4>Illuminated D/F Pylon Sign</h4><p>Full-height illuminated pylon sign program with 120" opening specs, code compliance documentation, and proposed vs. existing comparison drawings.</p></div>
+      <div class="pw"><div class="pwi">Channel</div><span class="pw-tag">Fabrication Drawings</span><h4>Illuminated Raceway Channel Letters</h4><p>LED illuminated channel letters on raceway. Full elevation, night simulation, and code analysis — 5" returns, white acrylic face, black trim.</p></div>
+      <div class="pw"><div class="pwi">Outdoor</div><span class="pw-tag">Presentation Drawing</span><h4>Outdoor Building Sign</h4><p>Illuminated channel letters, 17" height, stud-mounted. Full production notes, installation specifications, and vendor-ready file package.</p></div>
+      <div class="pw"><div class="pwi">Directional</div><span class="pw-tag">Wayfinding · Brand Book</span><h4>Directional Sign System</h4><p>Double-sided directional sign with dimensional drawings, wall restoration details, and code compliance documentation across a multi-sign program.</p></div>
+      <div class="pw"><div class="pwi">Glass</div><span class="pw-tag">Custom Fabrication</span><h4>Glass Wall Attachment System</h4><p>Custom glass wall attachment system with detailed engineering drawings across three sample specifications — mounting hardware, structural details, installation plans.</p></div>
+    </div>
+
+    <div class="ppanel" id="pp-packaging">
+      <div class="pw"><div class="pwi">Label</div><span class="pw-tag">Bottle Label · Pre-Media</span><h4>NaturesJuice — Vitamin C Label</h4><p>3-panel wrap label, 12cm × 5cm. Keyline with bleed, supplement facts, ingredient list, barcode — through to finished 3D bottle render.</p></div>
+      <div class="pw"><div class="pwi">Label</div><span class="pw-tag">Multi-SKU · Bottle Label</span><h4>Greenish — Carbonated Soft Drinks</h4><p>Three-SKU label set (Apple, Orange, Fig Juice). Full keyline-to-3D render for each flavor variant. Press-ready artwork across the range.</p></div>
+      <div class="pw"><div class="pwi">Pouch</div><span class="pw-tag">Standup Pouch</span><h4>6th Street Coffee — Standup Pouch</h4><p>Multi-panel standup pouch with gusset, 100g. Structural dieline through to finished printed pouch with full branding artwork and lifestyle render.</p></div>
+      <div class="pw"><div class="pwi">Carton</div><span class="pw-tag">Folding Carton · Pre-Media</span><h4>Daily Fresh — Toothpaste Carton</h4><p>Full structural dieline, detailed artwork across all panels, regulatory information, ingredient panels, and photorealistic 3D product render.</p></div>
+      <div class="pw"><div class="pwi">Carton</div><span class="pw-tag">Gift Carton · 3D Render</span><h4>Blazette Perfume — Gift Set Carton</h4><p>Complex gift carton with interior tray for 3-bottle set. Full structural dieline, premium gradient artwork, and 3D render with open-face display.</p></div>
+      <div class="pw"><div class="pwi">Label</div><span class="pw-tag">Tub Label · 3D Render</span><h4>Glacia Ice Cream — Tub &amp; Lid Labels</h4><p>Two-piece tub label set (wrap + circular lid). Full dieline, branded artwork with food photography, Nutrition Facts panel, and 3D product render.</p></div>
+    </div>
+
+    <div class="ppanel" id="pp-premedia">
+      <div class="pw"><div class="pwi">Ford</div><span class="pw-tag">Print Ad · Automotive</span><h4>Edwards Ford — Overstock Ad</h4><p>Full-page automotive sales ad with vehicle lineup, pricing tiers, bold headline treatment, and structured offer hierarchy. Press-ready output.</p></div>
+      <div class="pw"><div class="pwi">Thai</div><span class="pw-tag">Print Ad · F&amp;B</span><h4>Thai Village Restaurant</h4><p>Restaurant ad with food photography, brand positioning, address, and contact. Structured for regional newspaper and direct mail formats.</p></div>
+      <div class="pw"><div class="pwi">Cedar</div><span class="pw-tag">Print Ad · Construction</span><h4>Simply Cedar Roofing</h4><p>Multi-panel roofing contractor ad with property photography, service list, owner credentials, emergency contact, and CMYK press-ready output.</p></div>
+      <div class="pw"><div class="pwi">Aveda</div><span class="pw-tag">Retail Promotion · Beauty</span><h4>Bliss / Aveda — In-Store Promo</h4><p>Dual-brand in-store promotional piece with product photography, offer hierarchy, gift card incentive copy, and retail location details.</p></div>
+      <div class="pw"><div class="pwi">F&amp;B</div><span class="pw-tag">Print Ad · Beverage</span><h4>Fruit Refreshers — Product Launch</h4><p>Product launch ad with lifestyle food photography, bold typographic treatment, and seasonal promotional copy for magazine insertion.</p></div>
+      <div class="pw"><div class="pwi">Event</div><span class="pw-tag">Event Promo · Non-Profit</span><h4>Justin J. Watt Foundation</h4><p>Foundation event promotion with portrait photography, mission statement integration, motivational copy hierarchy, and event details for print distribution.</p></div>
+    </div>
+
+    <div class="ppanel" id="pp-brand">
+      <div class="pw"><div class="pwi">Spice</div><span class="pw-tag">Brand Identity · F&amp;B</span><h4>Spice Town — Full Brand System</h4><p>Complete restaurant brand: logo, exterior signage (illuminated projecting disc sign), food packaging (burger boxes, gable boxes), and branded touchpoints throughout.</p></div>
+      <div class="pw"><div class="pwi">Utopia</div><span class="pw-tag">Brand Identity · Hospitality</span><h4>Utopia — Hospitality Brand</h4><p>Full hospitality brand rollout: exterior building sign (illuminated channel letters), printed coasters, branded napkin rings, and tabletop brand experience system.</p></div>
+      <div class="pw"><div class="pwi">Whitea</div><span class="pw-tag">Brand Identity · FMCG</span><h4>Whitea Full Cream Milk</h4><p>Dairy brand identity and packaging — gable-top carton structural design with full-wrap artwork, nutritional panels, and 3D product visualization.</p></div>
+      <div class="pw"><div class="pwi">Lunnom</div><span class="pw-tag">Brand Identity · Consumer Electronics</span><h4>Lunnom LED — Product Packaging</h4><p>Consumer electronics brand packaging — full structural dieline, multi-panel artwork with technical specs layout, and finished 3D product render.</p></div>
+      <div class="pw"><div class="pwi">Greenish</div><span class="pw-tag">Brand Identity · Beverage</span><h4>Greenish — Beverage Brand</h4><p>Full beverage brand identity across a three-SKU range. Logo, color palette, label artwork with variant color coding, consistent across all products.</p></div>
+      <div class="pw"><div class="pwi">Blazette</div><span class="pw-tag">Brand Identity · Fragrance</span><h4>Blazette — Fragrance Brand</h4><p>Premium fragrance brand identity: logo, individual bottle labels across three variants, gift set carton packaging — cohesive from label to gift box.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div class="wrap">
+    <div class="ey">Who We Serve</div>
+    <h2>Industries We Design For</h2>
+    <p style="max-width:580px;margin-top:1rem">We've built visual systems for some of the most demanding brand environments in the country. If your business needs to look right at scale, we've been there.</p>
+    <div class="ig">
+      <div class="ic"><div class="ico">🛍️</div><h3>Retail</h3><p class="icd">National chains, department stores, specialty retail, franchise networks.</p><ul class="il"><li>In-store signage systems</li><li>Window &amp; POS graphics</li><li>Multi-location brand rollouts</li><li>Seasonal campaigns</li></ul></div>
+      <div class="ic"><div class="ico">🍽️</div><h3>Food &amp; Beverage</h3><p class="icd">QSR chains, casual dining, breweries, coffee shops, food halls.</p><ul class="il"><li>Restaurant signage &amp; brand books</li><li>Menu boards &amp; packaging</li><li>Brand identity for new concepts</li><li>Bottle labels &amp; cartons</li></ul></div>
+      <div class="ic"><div class="ico">🏨</div><h3>Hotels &amp; Hospitality</h3><p class="icd">Hotel brands, resort groups, boutique properties, management companies.</p><ul class="il"><li>Property signage programs</li><li>Guest experience graphics</li><li>Brand standards compliance</li><li>Wayfinding systems</li></ul></div>
+      <div class="ic"><div class="ico">🏦</div><h3>Banks &amp; Financial</h3><p class="icd">Regional banks, credit unions, insurance companies, financial branches.</p><ul class="il"><li>Branch signage programs</li><li>Regulatory-compliant graphics</li><li>ATM &amp; kiosk wraps</li><li>Corporate identity systems</li></ul></div>
+      <div class="ic"><div class="ico">🏪</div><h3>Specialty Stores</h3><p class="icd">Health &amp; wellness, beauty, apparel, automotive, home goods.</p><ul class="il"><li>Branded retail environments</li><li>In-store brand experiences</li><li>Product display graphics</li><li>Promotional campaigns</li></ul></div>
+      <div class="ic"><div class="ico">📦</div><h3>FMCG &amp; Consumer Brands</h3><p class="icd">Consumer packaged goods, supplements, beverages, personal care, electronics.</p><ul class="il"><li>Full packaging design</li><li>Multi-SKU label systems</li><li>3D pack-shot rendering</li><li>eCommerce-ready assets</li></ul></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SOFTWARE -->
+<section id="software">
+  <div class="wrap">
+    <div class="swi">
+      <div>
+        <div class="ey">Our Tools</div>
+        <h2>Professional-Grade Software Stack</h2>
+      </div>
+      <p style="font-size:1.05rem;line-height:1.9">We invest in the same tools used by the world's top production studios. Every file we deliver is built in the right software for the job — preflighted, color-managed, and vendor-ready.</p>
+    </div>
+    <div class="swcs">
+      <div><div class="swcl">Creative &amp; Design</div><div class="sps"><span class="sp hi">Adobe Illustrator</span><span class="sp hi">Adobe Photoshop</span><span class="sp hi">Adobe InDesign</span><span class="sp hi">Adobe Acrobat Pro DC</span><span class="sp">Adobe After Effects</span><span class="sp">Adobe Lightroom</span><span class="sp">Adobe Premiere Pro</span><span class="sp hi">CorelDRAW Graphics Suite</span><span class="sp">QuarkXPress</span><span class="sp">Figma &amp; FigJam</span><span class="sp">Adobe Fonts / Typekit</span></div></div>
+      <div><div class="swcl">Signage &amp; Large Format Production</div><div class="sps"><span class="sp hi">SAi FlexiSIGN &amp; Print Pro</span><span class="sp hi">Caldera RIP Software</span><span class="sp">Onyx Thrive</span><span class="sp">Gerber Omega</span><span class="sp">CADlink Digital Factory</span><span class="sp">VersaWorks (Roland RIP)</span><span class="sp hi">LED Wizard / AutoCAD</span></div></div>
+      <div><div class="swcl">Pre-Media &amp; Prepress</div><div class="sps"><span class="sp hi">Esko ArtPro+</span><span class="sp hi">Enfocus PitStop Pro</span><span class="sp">EFI Fiery Command WorkStation</span><span class="sp">Enfocus Switch</span><span class="sp">Esko PackEdge / DeskPack</span><span class="sp">Adobe PDF Print Engine</span></div></div>
+      <div><div class="swcl">Color Management</div><div class="sps"><span class="sp hi">Pantone Connect</span><span class="sp">Pantone Color Manager</span><span class="sp">X-Rite i1Profiler</span><span class="sp">ColorThink Pro</span><span class="sp">GMG ColorProof</span></div></div>
+      <div><div class="swcl">Typography &amp; Asset Management</div><div class="sps"><span class="sp hi">FontExplorer X Pro</span><span class="sp">Suitcase Fusion</span><span class="sp">Adobe Bridge</span><span class="sp">Extensis Portfolio (DAM)</span></div></div>
+      <div><div class="swcl">Project &amp; File Management</div><div class="sps"><span class="sp">Asana</span><span class="sp">Monday.com</span><span class="sp">Dropbox Business</span><span class="sp">Microsoft SharePoint</span><span class="sp">WeTransfer Pro</span><span class="sp">Client Portal Delivery</span></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WORKFLOW -->
+<section id="workflow">
+  <div class="wrap">
+    <div class="wph">
+      <div>
+        <div class="ey">How We Work</div>
+        <h2>Our Production Workflows</h2>
+      </div>
+      <p style="font-size:1.05rem;line-height:1.9">Every project type follows a documented, structured workflow — so you always know exactly where your work stands, who owns each step, and what you'll receive at the end.</p>
+    </div>
+    <div class="wtabs">
+      <button class="wtab on" onclick="showW('artwork',this)">Artwork Workflow</button>
+      <button class="wtab" onclick="showW('repro',this)">Repro Workflow</button>
+      <button class="wtab" onclick="showW('3d',this)">3D Render Workflow</button>
+    </div>
+
+    <div class="wpanel on" id="wp-artwork">
+      <div class="wsteps">
+        <div class="wstep"><span class="wsn">Step 01</span><h3>Design-Ready File</h3><p>Client provides the approved design-ready file. Brief, specs, and brand references confirmed before work begins.</p></div>
+        <div class="wstep"><span class="wsn">Step 02</span><h3>Job Logged</h3><p>Project inputs logged in our tracking system. Timeline, format specs, and delivery requirements confirmed.</p></div>
+        <div class="wstep"><span class="wsn">Step 03</span><h3>Preflight</h3><p>Production team runs full preflight on incoming files — checking specs, color mode, resolution, bleed, and document structure.</p></div>
+        <div class="wstep"><span class="wsn">Step 04</span><h3>Artwork Creation</h3><p>Production creates the final artwork. All elements placed in keyline, copy fitted, brand rules applied, production specs met.</p></div>
+        <div class="wstep"><span class="wsn">Step 05</span><h3>Quality Check</h3><p>Dedicated QC review — technical accuracy, content fitment, color accuracy, and brand compliance all verified.</p></div>
+        <div class="wstep"><span class="wsn">Step 06</span><h3>Final Overlook</h3><p>Senior team final overlook before any client-facing output. Visual and content sign-off at this stage.</p></div>
+        <div class="wstep"><span class="wsn">Step 07</span><h3>Shared with Client</h3><p>Artwork delivered via secure portal or email. Revision loop restarts from Step 04 if changes are requested.</p></div>
+        <div class="wstep"><span class="wsn">Step 08</span><h3>Layout Approval</h3><p>Client provides written layout and content approval before any file moves to repro or press.</p></div>
+        <div class="wstep"><span class="wsn">Step 09</span><h3>Approved File Released</h3><p>Approved artwork released as final. File enters repro workflow or is archived as a production master.</p></div>
+      </div>
+    </div>
+
+    <div class="wpanel" id="wp-repro">
+      <div class="wsteps">
+        <div class="wstep"><span class="wsn">Step 01</span><h3>Approved Artwork File</h3><p>Final layout-approved file received from client. Production master — no further content changes from this point.</p></div>
+        <div class="wstep"><span class="wsn">Step 02</span><h3>Job Logged</h3><p>Repro job logged. Print spec, substrate, print vendor, and delivery format all confirmed at this stage.</p></div>
+        <div class="wstep"><span class="wsn">Step 03</span><h3>Repro Print-Ready File</h3><p>Production builds the final repro file — color separation, trap, overprint, PDF/X output, and vendor-specific settings applied.</p></div>
+        <div class="wstep"><span class="wsn">Step 04</span><h3>Quality Check</h3><p>Full technical QC — Enfocus PitStop Pro preflight, color profile verification, barcode check, and dieline alignment confirmed.</p></div>
+        <div class="wstep"><span class="wsn">Step 05</span><h3>Final Overlook</h3><p>Senior team final visual and production spec overlook before client delivery.</p></div>
+        <div class="wstep"><span class="wsn">Step 06</span><h3>Shared with Client</h3><p>Repro proof sent to client via portal or email for final file approval before release to printer.</p></div>
+        <div class="wstep"><span class="wsn">Step 07</span><h3>Final File Approval</h3><p>Client provides written approval of the repro file. No printer release without explicit sign-off.</p></div>
+        <div class="wstep"><span class="wsn">Step 08</span><h3>Released to Printer</h3><p>Final approved file released directly to the print vendor per agreed specification. Job complete.</p></div>
+      </div>
+    </div>
+
+    <div class="wpanel" id="wp-3d">
+      <div class="wsteps">
+        <div class="wstep"><span class="wsn">Step 01</span><h3>Approved Released File</h3><p>Final approved artwork confirmed before 3D work begins. No 3D production on unapproved artwork.</p></div>
+        <div class="wstep"><span class="wsn">Step 02</span><h3>Inputs to 3D Team</h3><p>Approved artwork, structural dieline, substrate specs, and any reference photography shared with the 3D production team.</p></div>
+        <div class="wstep"><span class="wsn">Step 03</span><h3>3D File Created</h3><p>3D team builds the photorealistic model — structural form, material finishes, lighting, and artwork applied to the 3D surface.</p></div>
+        <div class="wstep"><span class="wsn">Step 04</span><h3>Quality Check</h3><p>3D QC review — artwork mapping, reflections, shadow behavior, product proportions, and render resolution all verified.</p></div>
+        <div class="wstep"><span class="wsn">Step 05</span><h3>Final Overlook</h3><p>Senior team final overlook — visual quality, brand accuracy, and marketing suitability confirmed before client delivery.</p></div>
+        <div class="wstep"><span class="wsn">Step 06</span><h3>Delivered to Client</h3><p>Final 3D renders and 360° videos delivered in agreed formats — JPEG, PNG, MP4, or layered PSD as specified.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="ey">Why Fog &amp; Hammer</div>
+    <h2 style="max-width:620px">A Studio That Understands Production — Not Just Design.</h2>
+    <div class="wyg">
+      <div class="wyi"><div class="wyr"></div><h3>Signage + Premedia + Packaging — One Studio</h3><p>Most studios do one thing. We cover the full production surface — sign fabrication drawings and brand books through to packaging keylines, 3D renders, pre-media repro, and print advertising — under one quality standard, one team.</p></div>
+      <div class="wyi"><div class="wyr"></div><h3>Documented Workflows. Structured QC.</h3><p>Every project type follows a documented multi-step workflow with formal QC reviews at every handoff. You always know where your work stands and exactly what's been checked before delivery.</p></div>
+      <div class="wyi"><div class="wyr"></div><h3>The Right Tool for Every Job</h3><p>We work across the full Adobe Creative Suite, CorelDRAW, SAi FlexiSIGN, Esko ArtPro+, Enfocus PitStop Pro, Pantone Connect, and every major pre-media and signage platform — because precision starts at the workstation.</p></div>
+      <div class="wyi"><div class="wyr"></div><h3>National Scale, Studio-Level Precision</h3><p>We serve national retailers, restaurant chains, hotel brands, and financial institutions across the US — delivering brand programs that stay consistent at every location, in every market, at every scale.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section id="cta">
+  <h2>Ready to Build Something<br>That Lasts?</h2>
+  <p>Tell us about your brand. We'll tell you what it takes to make it unforgettable — in every market, across every format, through every sign and surface.</p>
+  <div class="cas">
+    <a class="bdk" href="mailto:hello@fogandhammer.com">Start a Conversation</a>
+    <a class="bdo" href="#portfolio">View Our Work</a>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi">
+    <div class="fb">
+      <div class="fl"><span class="flo">Fog</span><span class="fla">&amp;</span><span class="flh">Hammer</span></div>
+      <p>A national design studio specializing in signage programs, pre-media production, packaging design, and brand identity — for companies that need to look right at scale, in every market.</p>
+    </div>
+    <div class="fcol">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Signage &amp; Brand Books</a></li>
+        <li><a href="#">Custom Fabrication &amp; LED</a></li>
+        <li><a href="#">Pre-Media &amp; Repro</a></li>
+        <li><a href="#">Packaging Design &amp; 3D</a></li>
+        <li><a href="#">Brand Identity</a></li>
+        <li><a href="#">Print Advertising</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Industries</h4>
+      <ul>
+        <li><a href="#">Retail</a></li>
+        <li><a href="#">Food &amp; Beverage</a></li>
+        <li><a href="#">Hotels &amp; Hospitality</a></li>
+        <li><a href="#">Banks &amp; Finance</a></li>
+        <li><a href="#">Specialty Stores</a></li>
+        <li><a href="#">FMCG &amp; Consumer Brands</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Process</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Software &amp; Tools</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>© 2025 Fog &amp; Hammer. All rights reserved. National design services for brands that mean business.</p>
+    <p>Privacy Policy &nbsp;·&nbsp; Terms of Service</p>
+  </div>
+</footer>
+
+<script>
+function showP(id,btn){
+  document.querySelectorAll('.ppanel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.pcat').forEach(b=>b.classList.remove('on'));
+  document.getElementById('pp-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+function showW(id,btn){
+  document.querySelectorAll('.wpanel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.wtab').forEach(b=>b.classList.remove('on'));
+  document.getElementById('wp-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+</script>
+</body>
+</html>
