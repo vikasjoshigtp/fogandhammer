@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Terms of Service | Fog &amp; Hammer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&amp;family=Outfit:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0C0B09; --sf:#141311; --sf2:#1D1B18; --sf3:#232118;
+  --bd:rgba(220,210,190,0.09); --bd2:rgba(220,210,190,0.18); --bd3:rgba(220,210,190,0.28);
+  --tx:#EDE8DE; --tm:#8A8278; --td:#524E47;
+  --ac:#C4975A; --al:#E0B97A; --ad:#9A7240;
+  --ab:rgba(196,151,90,0.07); --ab2:rgba(196,151,90,0.13);
+  --wh:#F5EFE3;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--tx);font-size:16px;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5rem;background:rgba(12,11,9,0.95);backdrop-filter:blur(14px);border-bottom:0.5px solid var(--bd)}
+.nl{display:flex;align-items:baseline;gap:.2rem;text-decoration:none}
+.nl-f{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;letter-spacing:.04em;color:var(--wh)}
+.nl-a{color:var(--ac);font-size:1.3rem;margin:0 .25rem}
+.nl-h{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;letter-spacing:.04em;color:var(--wh)}
+.nv{display:flex;gap:2.5rem;list-style:none}
+.nv a{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--td);text-decoration:none;transition:color .2s}
+.nv a:hover{color:var(--ac)}
+.nm{display:none;font-family:'Outfit',sans-serif;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.65rem 1rem;border:.5px solid var(--bd2);color:var(--ac);background:transparent;cursor:pointer;transition:all .22s}
+.nm:hover,.nm:focus-visible{border-color:var(--ac);color:var(--al);outline:none}
+.nvm{display:none}
+.nc{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.65rem 1.6rem;border:.5px solid var(--ac);color:var(--ac);background:transparent;cursor:pointer;transition:all .22s;text-decoration:none}
+.nc:hover{background:var(--ac);color:var(--bg)}
+.legal{padding:8.5rem 5rem 5rem;background:var(--sf);min-height:100vh}
+.wrap{max-width:900px;margin:0 auto}
+.ey{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:1.75rem;display:flex;align-items:center;gap:1rem}
+.ey::before{content:'';width:2.5rem;height:.5px;background:var(--ac)}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.12;letter-spacing:.01em;color:var(--wh)}
+h1{font-size:clamp(2.15rem,3.4vw,3.2rem);margin-bottom:1.1rem}
+h2{font-size:1.35rem;margin:2.5rem 0 .7rem}
+p{color:var(--tm);line-height:1.85}
+.note{border:.5px solid rgba(196,151,90,.38);background:var(--ab2);color:var(--al);padding:1rem 1.2rem;margin-bottom:2rem;font-size:.88rem;letter-spacing:.04em;text-transform:uppercase}
+.lead{font-size:.98rem;margin-bottom:2.2rem}
+.doc-section{border-top:.5px solid var(--bd);padding-top:1.2rem}
+.doc-section p{font-size:.95rem}
+.doc-section ul{margin:0 0 1.2rem 1.2rem;color:var(--tm);font-size:.95rem;line-height:1.85}
+.doc-section li{margin-bottom:.35rem}
+.actions{margin-top:3rem}
+.bp{display:inline-block;padding:1rem 2.75rem;background:var(--ac);color:var(--bg);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .22s}
+.bp:hover{background:var(--al)}
+footer{background:var(--bg);padding:3rem 5rem;border-top:.5px solid var(--bd)}
+.fbot{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:2rem}
+.fbot p{font-size:.77rem;color:var(--td)}
+.fbot a{color:var(--td);text-decoration:none;transition:color .2s}
+.fbot a:hover{color:var(--ac)}
+@media(max-width:960px){
+  nav{padding:1rem 1.75rem}.nv{display:none}
+  .nm{display:inline-block;margin-left:auto;margin-right:1rem}
+  .nvm{position:absolute;top:100%;left:1.75rem;right:1.75rem;background:rgba(12,11,9,0.98);border:.5px solid var(--bd2);padding:.6rem 0}
+  .nvm:not([hidden]){display:flex;flex-direction:column}
+  .nvm a{padding:.9rem 1rem;color:var(--tm);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:.5px solid var(--bd);transition:color .2s,background .2s}
+  .nvm a:last-child{border-bottom:none}
+  .nvm a:hover,.nvm a:focus-visible{color:var(--ac);background:var(--ab);outline:none}
+  .legal{padding:7.25rem 1.75rem 4.5rem}
+  footer{padding:3rem 1.75rem}
+  .fbot{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:520px){
+  .nc{display:none}
+  .nm{margin-right:0}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nl" href="fog_hammer_clean.html">
+    <span class="nl-f">Fog</span><span class="nl-a">&amp;</span><span class="nl-h">Hammer</span>
+  </a>
+  <ul class="nv">
+    <li><a href="fog_hammer_clean.html#about">Studio</a></li>
+    <li><a href="fog_hammer_clean.html#services">Services</a></li>
+    <li><a href="fog_hammer_clean.html#portfolio">Work</a></li>
+    <li><a href="fog_hammer_clean.html#industries">Industries</a></li>
+    <li><a href="fog_hammer_clean.html#software">Tools</a></li>
+    <li><a href="fog_hammer_clean.html#workflow">Process</a></li>
+  </ul>
+  <button class="nm" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+  <a class="nc" href="fog_hammer_clean.html#cta">Start a Project</a>
+  <div class="nvm" id="mobile-menu" hidden>
+    <a href="fog_hammer_clean.html#about">Studio</a>
+    <a href="fog_hammer_clean.html#services">Services</a>
+    <a href="fog_hammer_clean.html#portfolio">Work</a>
+    <a href="fog_hammer_clean.html#industries">Industries</a>
+    <a href="fog_hammer_clean.html#software">Tools</a>
+    <a href="fog_hammer_clean.html#workflow">Process</a>
+    <a href="fog_hammer_clean.html#cta">Start a Project</a>
+  </div>
+</nav>
+
+<main class="legal">
+  <div class="wrap">
+    <h1>Terms &amp; Conditions</h1>
+    <p class="lead">Last Updated: 1st april 2026 &nbsp;&nbsp;|&nbsp;&nbsp; Governed by United States Law</p>
+
+    <section class="doc-section">
+      <p>These Terms &amp; Conditions ("Terms") govern your access to and use of the Fog &amp; Hammer website, fogandhammer.com ("Website"). Please read these Terms carefully before using the Website.</p>
+      <p>Fog &amp; Hammer provides design and production services in the United States, including signage programs, brand identity, pre-media production, packaging design, 3D rendering, print advertising, and related creative production services.</p>
+      <p>By accessing or using the Website, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the Website.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>1. Permitted Use of the Website</h2>
+      <p>You may use this Website for lawful informational and enquiry purposes only. Specifically, you agree not to:</p>
+      <ul>
+        <li>Use the Website for any unlawful, fraudulent, abusive, or harmful purpose</li>
+        <li>Attempt to gain unauthorized access to any part of the Website, its servers, or connected systems</li>
+        <li>Interfere with, disrupt, or impair the Website's functionality, security, or availability</li>
+        <li>Submit malicious code, viruses, spam, or automated requests to the Website</li>
+        <li>Copy, scrape, reproduce, or systematically extract Website content without prior written permission</li>
+        <li>Use the Website in a way that could damage, overburden, or impair Fog &amp; Hammer's systems or reputation</li>
+        <li>Submit false, misleading, or fraudulent information through the contact form</li>
+      </ul>
+      <p>Fog &amp; Hammer reserves the right to restrict or terminate access to the Website for any user who violates these Terms or uses the Website in a manner inconsistent with its intended purpose.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>2. Website Content</h2>
+      <p>All content on fogandhammer.com — including text, service descriptions, portfolio descriptions, industry references, workflow descriptions, software references, graphics, layout, and branding — is provided for general informational and promotional purposes.</p>
+      <p>Website content is accurate to the best of our knowledge at the time of publication, but is not a guarantee, warranty, commitment, or binding representation of any kind. In particular, Website content does not constitute:</p>
+      <ul>
+        <li>A binding quote, estimate, or proposal for any services</li>
+        <li>A guaranteed timeline, deliverable, or project outcome</li>
+        <li>A warranty or representation that any specific result will be achieved for your project</li>
+        <li>A professional engagement or client relationship</li>
+      </ul>
+      <p>Any service agreement, quote, scope of work, timeline, pricing, deliverable specification, revision policy, or professional commitment must be confirmed separately in a written proposal, statement of work, invoice, or other signed agreement between Fog &amp; Hammer and the client.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>3. Services Described</h2>
+      <p>The Website describes services including, but not limited to, signage design and brand books, custom fabrication and LED production drawings, pre-media and repro production, packaging design and 3D rendering, brand identity and localization, and print advertising and collateral.</p>
+      <p>Actual project scope, deliverables, timelines, pricing, revision cycles, approval requirements, ownership rights, and file delivery standards must all be confirmed in a written agreement for each project.</p>
+      <p>Fog &amp; Hammer reserves the right to decline, modify, or discontinue any service offering at any time without notice.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>4. Enquiries and Communications</h2>
+      <p>You may contact Fog &amp; Hammer through the Website enquiry form or by email at hello@fogandhammer.com. By submitting an enquiry, you acknowledge that:</p>
+      <ul>
+        <li>Submitting an enquiry does not create a client relationship, service agreement, confidentiality obligation, or professional commitment of any kind.</li>
+        <li>A formal engagement begins only when Fog &amp; Hammer and the client have agreed to project terms in a written proposal, statement of work, or signed agreement.</li>
+        <li>You should not submit confidential, proprietary, regulated, or trade secret information through the general Website enquiry form. Fog &amp; Hammer does not accept unsolicited confidential disclosures and will not be bound by any confidentiality obligations arising from a general website enquiry unless separately agreed in writing.</li>
+        <li>Fog &amp; Hammer has no obligation to respond to every enquiry or to accept every project.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>5. Portfolio and Work Examples</h2>
+      <p>The Website includes descriptions of Fog &amp; Hammer's portfolio of work across signage, packaging, pre-media, print, and brand identity.</p>
+      <p>Portfolio content is provided to illustrate the type, range, and quality of services Fog &amp; Hammer may provide. It does not guarantee identical results, timelines, technical specifications, print outcomes, fabrication results, or regulatory approvals for future projects.</p>
+      <p>Project outcomes depend on many factors specific to each engagement, including client inputs, approvals, production requirements, vendor specifications, permitting, regulatory requirements, material availability, and other project-specific circumstances.</p>
+      <p>All portfolio content displayed on the Website is owned by or used with the permission of Fog &amp; Hammer. Unauthorized reproduction, copying, or use of portfolio content is prohibited.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>6. Client Materials and Project Inputs</h2>
+      <p>For design and production projects, clients are typically required to provide project inputs, which may include approved artwork files, brand guidelines, structural dielines, signage specifications, print specifications, copy, regulatory information, and project approvals.</p>
+      <p>You are solely responsible for ensuring that:</p>
+      <ul>
+        <li>You have all necessary rights, licenses, and permissions to provide any materials submitted to Fog &amp; Hammer for use in a project</li>
+        <li>Materials you submit do not infringe the intellectual property rights of any third party</li>
+        <li>Any copy, claims, regulatory information, or content you provide is accurate, complete, and compliant with applicable law</li>
+      </ul>
+      <p>Fog &amp; Hammer is not responsible for errors, omissions, or legal issues arising from client-provided content, information, or approvals.</p>
+      <p>Specific policies regarding client file requirements, file formats, revision cycles, approval processes, turnaround times, and delivery requirements will be set out in the written project agreement for each engagement.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>7. Intellectual Property</h2>
+      <p>All Website content, including text, layout, design elements, branding, service and portfolio descriptions, graphics, and other materials, is owned by or licensed to Fog &amp; Hammer. All rights are reserved.</p>
+      <p>You may not copy, reproduce, modify, distribute, publish, display, or use Website content for commercial or public purposes without the prior written permission of Fog &amp; Hammer. Limited personal, non-commercial viewing is permitted solely in connection with your use of the Website for its intended purpose.</p>
+      <p>Project-specific intellectual property matters — including ownership of final deliverables, ownership of source and native files, font and asset licensing, third-party stock image rights, usage rights, licensing terms, and portfolio display rights — will be addressed in the written project agreement for each engagement.</p>
+      <p>Unless expressly agreed otherwise in a written project agreement, all work product created by Fog &amp; Hammer remains the property of Fog &amp; Hammer until full payment is received for the applicable project.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>8. Software and Third-Party Tool References</h2>
+      <p>The Website references professional design, pre-media, signage, color management, project management, and file management software tools to describe Fog &amp; Hammer's production capabilities and workflows.</p>
+      <p>These references are provided for informational context only. Unless expressly stated, references to third-party products, software, or platforms do not imply any sponsorship, endorsement, partnership, certification, or affiliation between Fog &amp; Hammer and the referenced product or company.</p>
+      <p>All product and company names referenced on the Website are the trademarks or registered trademarks of their respective owners.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>9. No Professional Guarantee from Website Content</h2>
+      <p>Website content is informational only and does not constitute a guarantee, warranty, or professional representation of any kind.</p>
+      <p>While Fog &amp; Hammer takes care to present accurate and professional information on the Website, we make no representations or warranties — express or implied — that the Website is complete, accurate, current, error-free, or fit for any particular purpose.</p>
+      <p>You should not rely on general Website content as the basis for any business or investment decision. All project-specific representations must be confirmed in writing.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>10. Third-Party Vendors and Production Partners</h2>
+      <p>Some Fog &amp; Hammer projects may involve third-party printers, fabricators, installers, signage vendors, production partners, or other external suppliers, depending on the scope and nature of the engagement.</p>
+      <p>The specific role of any third-party vendor — including whether Fog &amp; Hammer selects, coordinates, or manages the vendor on your behalf — will be clearly defined in the written project agreement for each engagement.</p>
+      <p>Fog &amp; Hammer is not responsible for the acts, omissions, errors, quality, timing, or performance of any third-party vendor or production partner unless expressly agreed in a written project agreement. Final responsibility for fabrication quality, print output, installation, permitting, and production outcomes rests with the vendor of record for each service.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>11. Payments, Quotes, and Project Terms</h2>
+      <p>The Website does not include pricing, rates, or billing terms. All project pricing is provided by separate written quotation, proposal, or statement of work.</p>
+      <p>Specific payment terms — including deposit requirements, payment schedules, late payment provisions, cancellation terms, and any applicable rush fees — will be set out in the written agreement for each project.</p>
+      <p>General website enquiries do not constitute a quote, estimate, or pricing commitment. Pricing is subject to change and must be confirmed in a current written proposal.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>12. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by applicable law, Fog &amp; Hammer and its principals, employees, and agents shall not be liable for:</p>
+      <ul>
+        <li>Indirect, incidental, special, consequential, or punitive damages of any kind</li>
+        <li>Loss of revenue, profit, data, business opportunity, or goodwill arising from the use of or inability to use this Website</li>
+        <li>Damages arising from reliance on general Website content</li>
+        <li>Damages arising from submission of information through unsecured channels</li>
+        <li>Technical errors, interruptions, or unavailability of the Website</li>
+      </ul>
+      <p>In any event, the total liability of Fog &amp; Hammer arising from use of this Website shall not exceed the amount, if any, paid by you to Fog &amp; Hammer in connection with the specific transaction giving rise to the claim.</p>
+      <p>Project-specific liability, indemnification, and insurance requirements will be addressed in the written project agreement for each engagement. This limitation of liability section does not limit any rights you may have under applicable consumer protection law.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>13. No Warranties</h2>
+      <p>The Website is provided on an "as is" and "as available" basis, without warranties of any kind, whether express or implied. Fog &amp; Hammer expressly disclaims all implied warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+      <p>Fog &amp; Hammer does not warrant that the Website will always be available, uninterrupted, error-free, free from technical issues, secure, or free from viruses or other harmful components.</p>
+      <p>Any warranties relating to specific project deliverables, services, or outcomes must be separately stated in the written project agreement for each engagement.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>14. Governing Law and Dispute Resolution</h2>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the United States and the state in which Fog &amp; Hammer's principal place of business is located, without regard to conflict of law principles. Florida, USA</p>
+      <p>Any dispute, claim, or controversy arising out of or relating to these Terms or your use of the Website shall first be subject to good-faith informal resolution. The party raising the dispute shall notify the other in writing, and both parties agree to attempt to resolve the matter informally within thirty (30) days of that notice.</p>
+      <p>If informal resolution is unsuccessful, the dispute shall be subject to the exclusive jurisdiction of the state and federal courts located in the applicable jurisdiction, and each party consents to personal jurisdiction in those courts.</p>
+      <p>Nothing in this section prevents either party from seeking urgent injunctive or equitable relief from a court of competent jurisdiction where necessary to prevent irreparable harm.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>15. Changes to These Terms</h2>
+      <p>Fog &amp; Hammer may update these Terms from time to time to reflect changes in our practices, applicable law, or business operations. When we make changes, we will update the "Last Updated" date at the top of this page.</p>
+      <p>Your continued use of the Website after updated Terms are posted constitutes your acceptance of the revised Terms. We encourage you to review these Terms periodically.</p>
+      <p>If we make material changes that significantly affect your rights, we will take reasonable steps to provide notice through the Website.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>16. Severability</h2>
+      <p>If any provision of these Terms is found by a court of competent jurisdiction to be invalid, unlawful, or unenforceable, that provision shall be modified to the minimum extent necessary to make it enforceable, or severed from these Terms if modification is not possible. The remaining provisions of these Terms shall continue in full force and effect.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>17. Entire Agreement</h2>
+      <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Fog &amp; Hammer regarding your use of the Website, and supersede all prior agreements, representations, and understandings relating to the same subject matter.</p>
+      <p>Nothing in these Terms is intended to limit any rights you may have under applicable law that cannot be waived by contract.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>18. Contact</h2>
+      <p>For questions about these Terms or any Website-related enquiry, please contact:</p>
+      <p>Fog &amp; Hammer<br>Email: hello@fogandhammer.com<br>Website: fogandhammer.com<br>Business Address: Florida, USA</p>
+      <p>Fog &amp; Hammer · National Design Studio · fogandhammer.com</p>
+    </section>
+
+    <div class="actions">
+      <a class="bp" href="fog_hammer_clean.html">Back to Home</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="fbot">
+    <p>© 2026 Fog &amp; Hammer. All rights reserved.</p>
+    <p><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a></p>
+  </div>
+</footer>
+
+<script>
+const navToggle=document.querySelector('.nm');
+const mobileMenu=document.getElementById('mobile-menu');
+function closeMobileMenu(){
+  if(!navToggle||!mobileMenu)return;
+  mobileMenu.hidden=true;
+  navToggle.setAttribute('aria-expanded','false');
+  navToggle.setAttribute('aria-label','Open navigation menu');
+}
+if(navToggle&&mobileMenu){
+  navToggle.addEventListener('click',()=>{
+    const isOpen=navToggle.getAttribute('aria-expanded')==='true';
+    mobileMenu.hidden=isOpen;
+    navToggle.setAttribute('aria-expanded',String(!isOpen));
+    navToggle.setAttribute('aria-label',isOpen?'Open navigation menu':'Close navigation menu');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMobileMenu));
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&!mobileMenu.hidden){
+      closeMobileMenu();
+      navToggle.focus();
+    }
+  });
+}
+</script>
+</body>
+</html>

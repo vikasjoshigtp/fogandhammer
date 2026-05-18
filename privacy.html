@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Privacy Policy | Fog &amp; Hammer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&amp;family=Outfit:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0C0B09; --sf:#141311; --sf2:#1D1B18; --sf3:#232118;
+  --bd:rgba(220,210,190,0.09); --bd2:rgba(220,210,190,0.18); --bd3:rgba(220,210,190,0.28);
+  --tx:#EDE8DE; --tm:#8A8278; --td:#524E47;
+  --ac:#C4975A; --al:#E0B97A; --ad:#9A7240;
+  --ab:rgba(196,151,90,0.07); --ab2:rgba(196,151,90,0.13);
+  --wh:#F5EFE3;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--tx);font-size:16px;line-height:1.7;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5rem;background:rgba(12,11,9,0.95);backdrop-filter:blur(14px);border-bottom:0.5px solid var(--bd)}
+.nl{display:flex;align-items:baseline;gap:.2rem;text-decoration:none}
+.nl-f{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;letter-spacing:.04em;color:var(--wh)}
+.nl-a{color:var(--ac);font-size:1.3rem;margin:0 .25rem}
+.nl-h{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;letter-spacing:.04em;color:var(--wh)}
+.nv{display:flex;gap:2.5rem;list-style:none}
+.nv a{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--td);text-decoration:none;transition:color .2s}
+.nv a:hover{color:var(--ac)}
+.nm{display:none;font-family:'Outfit',sans-serif;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.65rem 1rem;border:.5px solid var(--bd2);color:var(--ac);background:transparent;cursor:pointer;transition:all .22s}
+.nm:hover,.nm:focus-visible{border-color:var(--ac);color:var(--al);outline:none}
+.nvm{display:none}
+.nc{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.65rem 1.6rem;border:.5px solid var(--ac);color:var(--ac);background:transparent;cursor:pointer;transition:all .22s;text-decoration:none}
+.nc:hover{background:var(--ac);color:var(--bg)}
+.legal{padding:8.5rem 5rem 5rem;background:var(--sf);min-height:100vh}
+.wrap{max-width:900px;margin:0 auto}
+.ey{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:1.75rem;display:flex;align-items:center;gap:1rem}
+.ey::before{content:'';width:2.5rem;height:.5px;background:var(--ac)}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.12;letter-spacing:.01em;color:var(--wh)}
+h1{font-size:clamp(2.15rem,3.4vw,3.2rem);margin-bottom:1.1rem}
+h2{font-size:1.35rem;margin:2.5rem 0 .7rem}
+p{color:var(--tm);line-height:1.85}
+.note{border:.5px solid rgba(196,151,90,.38);background:var(--ab2);color:var(--al);padding:1rem 1.2rem;margin-bottom:2rem;font-size:.88rem;letter-spacing:.04em;text-transform:uppercase}
+.lead{font-size:.98rem;margin-bottom:2.2rem}
+.doc-section{border-top:.5px solid var(--bd);padding-top:1.2rem}
+.doc-section p{font-size:.95rem}
+.doc-section ul{margin:0 0 1.2rem 1.2rem;color:var(--tm);font-size:.95rem;line-height:1.85}
+.doc-section li{margin-bottom:.35rem}
+.actions{margin-top:3rem}
+.bp{display:inline-block;padding:1rem 2.75rem;background:var(--ac);color:var(--bg);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .22s}
+.bp:hover{background:var(--al)}
+footer{background:var(--bg);padding:3rem 5rem;border-top:.5px solid var(--bd)}
+.fbot{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:2rem}
+.fbot p{font-size:.77rem;color:var(--td)}
+.fbot a{color:var(--td);text-decoration:none;transition:color .2s}
+.fbot a:hover{color:var(--ac)}
+@media(max-width:960px){
+  nav{padding:1rem 1.75rem}.nv{display:none}
+  .nm{display:inline-block;margin-left:auto;margin-right:1rem}
+  .nvm{position:absolute;top:100%;left:1.75rem;right:1.75rem;background:rgba(12,11,9,0.98);border:.5px solid var(--bd2);padding:.6rem 0}
+  .nvm:not([hidden]){display:flex;flex-direction:column}
+  .nvm a{padding:.9rem 1rem;color:var(--tm);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:.5px solid var(--bd);transition:color .2s,background .2s}
+  .nvm a:last-child{border-bottom:none}
+  .nvm a:hover,.nvm a:focus-visible{color:var(--ac);background:var(--ab);outline:none}
+  .legal{padding:7.25rem 1.75rem 4.5rem}
+  footer{padding:3rem 1.75rem}
+  .fbot{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:520px){
+  .nc{display:none}
+  .nm{margin-right:0}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nl" href="fog_hammer_clean.html">
+    <span class="nl-f">Fog</span><span class="nl-a">&amp;</span><span class="nl-h">Hammer</span>
+  </a>
+  <ul class="nv">
+    <li><a href="fog_hammer_clean.html#about">Studio</a></li>
+    <li><a href="fog_hammer_clean.html#services">Services</a></li>
+    <li><a href="fog_hammer_clean.html#portfolio">Work</a></li>
+    <li><a href="fog_hammer_clean.html#industries">Industries</a></li>
+    <li><a href="fog_hammer_clean.html#software">Tools</a></li>
+    <li><a href="fog_hammer_clean.html#workflow">Process</a></li>
+  </ul>
+  <button class="nm" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+  <a class="nc" href="fog_hammer_clean.html#cta">Start a Project</a>
+  <div class="nvm" id="mobile-menu" hidden>
+    <a href="fog_hammer_clean.html#about">Studio</a>
+    <a href="fog_hammer_clean.html#services">Services</a>
+    <a href="fog_hammer_clean.html#portfolio">Work</a>
+    <a href="fog_hammer_clean.html#industries">Industries</a>
+    <a href="fog_hammer_clean.html#software">Tools</a>
+    <a href="fog_hammer_clean.html#workflow">Process</a>
+    <a href="fog_hammer_clean.html#cta">Start a Project</a>
+  </div>
+</nav>
+
+<main class="legal">
+  <div class="wrap">
+    <h1>Privacy Policy</h1>
+    <p class="lead">Last Updated: 1st april 2026 &nbsp;&nbsp;|&nbsp;&nbsp; Effective: United States</p>
+
+    <section class="doc-section">
+      <p>Fog &amp; Hammer ("Fog &amp; Hammer," "we," "our," or "us") respects your privacy and is committed to handling personal information responsibly. This Privacy Policy explains what information we collect through our website, fogandhammer.com, how we use it, and the choices available to you.</p>
+      <p>Fog &amp; Hammer provides design and production services in the United States, including signage programs, brand identity, pre-media production, packaging design, 3D rendering, print advertising, and related creative production services.</p>
+      <p>By using this website or submitting information through the contact form, you agree to the practices described in this Privacy Policy.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>1. Information We Collect</h2>
+      <p>We collect only the information you choose to provide. When you contact us through the website enquiry form or by email, we may collect:</p>
+      <ul>
+        <li>Your name</li>
+        <li>Your email address</li>
+        <li>The content of your message or project enquiry</li>
+      </ul>
+      <p>We do not collect sensitive personal information, payment card data, government-issued identification, or regulated data through the website.</p>
+      <p>If you email us directly at hello@fogandhammer.com, we may retain the information included in your message and any related communication.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>2. How We Use Your Information</h2>
+      <p>We use information submitted through the website only for purposes directly related to your communication with us, including:</p>
+      <ul>
+        <li>Responding to your enquiry or message</li>
+        <li>Communicating about your potential project needs</li>
+        <li>Understanding your design, signage, branding, packaging, pre-media, print, or production requirements</li>
+        <li>Providing follow-up communication related to your enquiry</li>
+        <li>Maintaining internal business records related to communications</li>
+        <li>Improving how we manage and respond to website enquiries</li>
+      </ul>
+      <p>We do not use enquiry information for marketing purposes unrelated to your communication with us, and we do not sell or rent your personal information to third parties.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>3. Contact Form and Enquiries</h2>
+      <p>Our website includes a contact or enquiry form through which visitors may contact Fog &amp; Hammer about potential services.</p>
+      <p>By submitting an enquiry, you understand and agree that:</p>
+      <ul>
+        <li>Submitting an enquiry does not create a client relationship, confidentiality agreement, service engagement, or professional obligation unless separately agreed in writing.</li>
+        <li>You should not submit confidential business information, trade secrets, proprietary data, payment information, or regulated data through the website form. Fog &amp; Hammer does not accept unsolicited confidential disclosures through the general contact form.</li>
+        <li>Any information you include in a general enquiry is received without any obligation of confidentiality on our part, unless we have separately agreed otherwise in writing.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>4. Cookies and Analytics</h2>
+      <p>This website may use cookies and similar tracking technologies to support website functionality and to understand how visitors use our site. Cookies are small text files placed on your device when you visit a website.</p>
+      <p>The types of cookies this website may use include:</p>
+      <ul>
+        <li>Strictly necessary cookies — required for the website to function correctly, such as maintaining session state and enabling the contact form. These cannot be disabled.</li>
+        <li>Analytics cookies — used to collect aggregated, anonymous information about how visitors interact with the website, such as pages visited and time spent on the site. This information helps us understand how the website is used and improve its content and performance. No personally identifiable information is collected through analytics cookies.</li>
+      </ul>
+      <p>This website does not use advertising cookies, remarketing pixels, or behavioral tracking technologies for commercial targeting purposes.</p>
+      <p>You can control or disable cookies through your browser settings at any time. Please note that disabling certain cookies may affect the functionality of the website. For guidance on managing cookies in your browser, refer to your browser help documentation.</p>
+      <p>[Note for publication: Confirm specific analytics tools in use and update this section accordingly before going live.]</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>5. How We Share Information</h2>
+      <p>We do not sell personal information submitted through the website.</p>
+      <p>We may share information only where reasonably necessary for standard business operations, including:</p>
+      <ul>
+        <li>Responding to and managing your enquiry</li>
+        <li>Operating our website through our hosting provider</li>
+        <li>Processing contact form submissions through our email delivery systems</li>
+        <li>Supporting website analytics to understand visitor behavior in aggregate (described in Section 4)</li>
+        <li>Complying with applicable law, legal process, or lawful requests from government authorities</li>
+        <li>Protecting the rights, property, or safety of Fog &amp; Hammer, our clients, or others</li>
+      </ul>
+      <p>Any third-party service providers who handle information on our behalf are required to protect that information and use it only for the purposes for which it was shared. We do not authorize them to use or disclose your information for their own marketing or other purposes.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>6. Data Security</h2>
+      <p>We use reasonable administrative, technical, and organizational measures designed to protect information submitted through the website from unauthorized access, loss, misuse, or alteration.</p>
+      <p>These measures include using secure email communications, maintaining appropriate access controls, and selecting reputable service providers for website hosting and email delivery.</p>
+      <p>However, no method of internet transmission or electronic storage is completely secure. You should avoid submitting sensitive, confidential, or regulated information through the general website contact form.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>7. Data Retention</h2>
+      <p>We retain enquiry and contact information for the duration of the business relationship with the relevant individual or company, and for a reasonable period thereafter as required for legitimate business, legal, accounting, or operational purposes.</p>
+      <p>Where an enquiry does not lead to an active engagement, we retain the communication only for as long as reasonably necessary to respond to the enquiry and to maintain an accurate record of our correspondence.</p>
+      <p>Project-related communications, files, and records are retained for the duration of the client relationship and for such further period as may be required by applicable law or sound business practice.</p>
+      <p>After the applicable retention period, information is securely deleted or anonymized.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>8. Your Privacy Choices</h2>
+      <p>You may contact us at any time to:</p>
+      <ul>
+        <li>Request access to personal information you have submitted through the website</li>
+        <li>Request correction of inaccurate personal information</li>
+        <li>Request deletion of personal information, subject to any applicable legal or business retention requirements</li>
+      </ul>
+      <p>To make a request, contact us at:</p>
+      <p>Fog &amp; Hammer<br>Email: hello@fogandhammer.com<br>Website: fogandhammer.com<br>Business Address: [Insert Business Address]</p>
+      <p>We will respond to all valid requests within a reasonable time and in accordance with applicable law.</p>
+      <p>California Residents: If you are a California resident, you may have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information is collected, the right to delete personal information, and the right to opt out of the sale of personal information (we do not sell personal information). To exercise any CCPA rights, contact us using the details above.</p>
+      <p>Texas and Other US State Residents: If applicable state privacy laws grant you additional rights regarding personal information, you may contact us to exercise those rights. We will review requests in accordance with the requirements of applicable law.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>9. Children's Privacy</h2>
+      <p>This website is intended for business and professional audiences. It is not directed to children under the age of 13, and we do not knowingly collect or solicit personal information from children under 13.</p>
+      <p>If you believe that a child under 13 has provided us with personal information, please contact us at hello@fogandhammer.com so that we may delete that information.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>10. Links to Third-Party Websites</h2>
+      <p>Our website may include links or references to third-party tools, platforms, or services. These links are provided for convenience and informational purposes only.</p>
+      <p>Fog &amp; Hammer is not responsible for the privacy practices, content, data handling, or security of any third-party websites or services. We encourage you to review the privacy policies of any third-party websites you visit.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>11. Service Area</h2>
+      <p>Fog &amp; Hammer provides design and production services within the United States.</p>
+      <p>This website and its contact form are intended for use by persons located in the United States. If you are accessing this website from outside the United States, please be aware that information you submit may be transferred to and processed in the United States, where privacy laws may differ from those in your country.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>12. Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or for other business reasons. When we make changes, we will update the "Last Updated" date at the top of this page.</p>
+      <p>Your continued use of the website after the updated Privacy Policy is posted constitutes your acceptance of the revised policy. We encourage you to review this page periodically to stay informed about how we protect your information.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>13. Contact Us</h2>
+      <p>For questions, requests, or concerns regarding this Privacy Policy, please contact:</p>
+      <p>Fog &amp; Hammer<br>Email: hello@fogandhammer.com<br>Website: fogandhammer.com<br>Business Address: [Insert Business Address]</p>
+      <p>Fog &amp; Hammer · National Design Studio · fogandhammer.com</p>
+    </section>
+
+    <div class="actions">
+      <a class="bp" href="fog_hammer_clean.html">Back to Home</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="fbot">
+    <p>© 2026 Fog &amp; Hammer. All rights reserved.</p>
+    <p><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a></p>
+  </div>
+</footer>
+
+<script>
+const navToggle=document.querySelector('.nm');
+const mobileMenu=document.getElementById('mobile-menu');
+function closeMobileMenu(){
+  if(!navToggle||!mobileMenu)return;
+  mobileMenu.hidden=true;
+  navToggle.setAttribute('aria-expanded','false');
+  navToggle.setAttribute('aria-label','Open navigation menu');
+}
+if(navToggle&&mobileMenu){
+  navToggle.addEventListener('click',()=>{
+    const isOpen=navToggle.getAttribute('aria-expanded')==='true';
+    mobileMenu.hidden=isOpen;
+    navToggle.setAttribute('aria-expanded',String(!isOpen));
+    navToggle.setAttribute('aria-label',isOpen?'Open navigation menu':'Close navigation menu');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMobileMenu));
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&!mobileMenu.hidden){
+      closeMobileMenu();
+      navToggle.focus();
+    }
+  });
+}
+</script>
+</body>
+</html>

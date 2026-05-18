@@ -27,6 +27,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nv{display:flex;gap:2.5rem;list-style:none}
 .nv a{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--td);text-decoration:none;transition:color .2s}
 .nv a:hover{color:var(--ac)}
+.nm{display:none;font-family:'Outfit',sans-serif;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.65rem 1rem;border:.5px solid var(--bd2);color:var(--ac);background:transparent;cursor:pointer;transition:all .22s}
+.nm:hover,.nm:focus-visible{border-color:var(--ac);color:var(--al);outline:none}
+.nvm{display:none}
 .nc{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.65rem 1.6rem;border:.5px solid var(--ac);color:var(--ac);background:transparent;cursor:pointer;transition:all .22s;text-decoration:none}
 .nc:hover{background:var(--ac);color:var(--bg)}
 
@@ -107,12 +110,29 @@ p{color:var(--tm);line-height:1.85}
 .ppanel{display:none}
 .ppanel.on{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);animation:fi .4s ease}
 @keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.pw{background:var(--bg);padding:2.25rem;transition:background .22s;display:flex;flex-direction:column;gap:.75rem}
+.pw{background:var(--bg);padding:2.25rem;transition:background .22s;display:flex;flex-direction:column;gap:.75rem;cursor:pointer}
 .pw:hover{background:var(--sf2)}
+.pw:focus-visible{outline:1px solid var(--ac);outline-offset:-1px;background:var(--sf2)}
 .pwi{width:100%;aspect-ratio:16/10;background:var(--sf3);display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;font-family:'Cormorant Garamond',serif;font-size:3rem;color:rgba(196,151,90,.15);font-weight:300}
 .pw h4{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--wh)}
 .pw p{font-size:.83rem;color:var(--td);line-height:1.6}
 .pw-tag{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);border:.5px solid rgba(196,151,90,.22);padding:.3rem .7rem;background:var(--ab);display:inline-block;width:fit-content}
+.pm{position:fixed;inset:0;z-index:300;background:rgba(12,11,9,.86);display:flex;align-items:center;justify-content:center;padding:2rem;opacity:1;transition:opacity .22s ease}
+.pm[hidden]{display:none}
+.pmd{width:min(1040px,100%);max-height:92vh;background:var(--sf);border:.5px solid var(--bd2);box-shadow:0 28px 80px rgba(0,0,0,.38);display:grid;grid-template-columns:minmax(0,1fr) 18rem;position:relative;overflow:hidden}
+.pmv{background:var(--bg);min-height:24rem;display:flex;align-items:center;justify-content:center}
+.pmv img{display:block;width:100%;height:100%;max-height:72vh;object-fit:contain;background:var(--bg)}
+.pms{padding:2rem;display:flex;flex-direction:column;gap:1.1rem}
+.pms h3{font-size:1.55rem;margin-bottom:0}
+.pms p{font-size:.86rem;color:var(--tm);line-height:1.7;margin:0}
+.pmn{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:auto}
+.pm button{font-family:'Outfit',sans-serif}
+.pmc{position:absolute;top:1rem;right:1rem;width:2.5rem;height:2.5rem;border:.5px solid var(--bd2);background:rgba(12,11,9,.82);color:var(--ac);font-size:1.4rem;line-height:1;cursor:pointer;transition:all .2s;z-index:2}
+.pmc:hover,.pmc:focus-visible{border-color:var(--ac);color:var(--al);outline:none}
+.pmb{padding:.85rem 1rem;border:.5px solid var(--bd2);background:transparent;color:var(--ac);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.pmb:hover,.pmb:focus-visible{border-color:var(--ac);color:var(--al);outline:none}
+.pmb[disabled]{opacity:.45;cursor:not-allowed}
+.modal-open{overflow:hidden}
 
 /* INDUSTRIES */
 #industries{background:var(--bg)}
@@ -166,11 +186,24 @@ p{color:var(--tm);line-height:1.85}
 #cta::before{content:'F&H';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-size:28rem;font-weight:600;color:rgba(12,11,9,.05);letter-spacing:-.04em;line-height:1;pointer-events:none;user-select:none;white-space:nowrap}
 #cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4.5vw,4rem);color:var(--bg);font-weight:300;margin-bottom:1.75rem;line-height:1.15;position:relative}
 #cta p{color:rgba(12,11,9,.55);margin-bottom:3.25rem;font-size:1.05rem;max-width:580px;margin-left:auto;margin-right:auto;position:relative}
+.cem{color:rgba(12,11,9,.62);font-size:.95rem;margin:-1.6rem auto 2.5rem;position:relative}
+.cem a{color:var(--bg);font-weight:500;text-decoration:underline;text-underline-offset:.25rem}
 .cas{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;position:relative}
 .bdk{display:inline-block;padding:1.1rem 2.75rem;background:var(--bg);color:var(--al);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:background .22s}
 .bdk:hover{background:#1a1917}
 .bdo{display:inline-block;padding:1.1rem 2.75rem;border:.5px solid rgba(12,11,9,.28);color:var(--bg);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .22s}
 .bdo:hover{background:rgba(12,11,9,.1)}
+.cf{max-width:580px;margin:2.75rem auto 0;display:grid;grid-template-columns:1fr 1fr;gap:1rem;text-align:left;position:relative}
+.cfg{display:flex;flex-direction:column;gap:.45rem}
+.cfg.full{grid-column:1/-1}
+.cfg label{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(12,11,9,.65)}
+.cfg input,.cfg textarea{width:100%;font-family:'Outfit',sans-serif;font-size:.95rem;color:var(--bg);background:rgba(12,11,9,.18);border:.5px solid rgba(12,11,9,.52);padding:.9rem 1rem;outline:none;transition:border-color .2s,background .2s}
+.cfg textarea{min-height:7rem;resize:vertical}
+.cfg input:focus,.cfg textarea:focus{border-color:var(--bg);background:rgba(12,11,9,.24)}
+.cf .bdk{justify-self:start}
+.cf .bdk[disabled]{opacity:.65;cursor:not-allowed}
+.fs{grid-column:1/-1;min-height:1.5rem;margin:0;color:rgba(12,11,9,.68);font-size:.9rem}
+.fs.ok,.fs.err{color:var(--bg)}
 
 /* FOOTER */
 footer{background:var(--bg);padding:5rem;border-top:.5px solid var(--bd)}
@@ -186,17 +219,34 @@ footer{background:var(--bg);padding:5rem;border-top:.5px solid var(--bd)}
 .fcol ul li a:hover{color:var(--ac)}
 .fbot{max-width:1240px;margin:3.5rem auto 0;padding-top:2.25rem;border-top:.5px solid var(--bd);display:flex;justify-content:space-between;align-items:center}
 .fbot p{font-size:.77rem;color:var(--td)}
+.fbot a{color:var(--td);text-decoration:none;transition:color .2s}
+.fbot a:hover{color:var(--ac)}
 
 @media(max-width:960px){
   nav{padding:1rem 1.75rem}.nv{display:none}
+  .nm{display:inline-block;margin-left:auto;margin-right:1rem}
+  .nvm{position:absolute;top:100%;left:1.75rem;right:1.75rem;background:rgba(12,11,9,0.98);border:.5px solid var(--bd2);padding:.6rem 0}
+  .nvm:not([hidden]){display:flex;flex-direction:column}
+  .nvm a{padding:.9rem 1rem;color:var(--tm);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:.5px solid var(--bd);transition:color .2s,background .2s}
+  .nvm a:last-child{border-bottom:none}
+  .nvm a:hover,.nvm a:focus-visible{color:var(--ac);background:var(--ab);outline:none}
   section{padding:5rem 1.75rem}
   .hi,.ag,.sh,.swi,.wph{grid-template-columns:1fr;gap:3rem}
   .sg,.ig,.wsteps,.wyg{grid-template-columns:1fr}
   .ppanel.on{grid-template-columns:1fr 1fr}
+  .pmd{grid-template-columns:1fr;overflow:auto}
+  .pmv{min-height:18rem}
+  .pms{padding:1.5rem}
   .fi{grid-template-columns:1fr 1fr}
   #cta{padding:5rem 1.75rem}
+  .cf{grid-template-columns:1fr}
   #hero::after,#cta::before{font-size:8rem}
   .pcats{flex-wrap:wrap}
+}
+@media(max-width:520px){
+  .nc{display:none}
+  .nm{margin-right:0}
+  .pm{padding:1rem}
 }
 </style>
 </head>
@@ -215,7 +265,17 @@ footer{background:var(--bg);padding:5rem;border-top:.5px solid var(--bd)}
     <li><a href="#software">Tools</a></li>
     <li><a href="#workflow">Process</a></li>
   </ul>
+  <button class="nm" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
   <a class="nc" href="#cta">Start a Project</a>
+  <div class="nvm" id="mobile-menu" hidden>
+    <a href="#about">Studio</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Work</a>
+    <a href="#industries">Industries</a>
+    <a href="#software">Tools</a>
+    <a href="#workflow">Process</a>
+    <a href="#cta">Start a Project</a>
+  </div>
 </nav>
 
 
@@ -412,6 +472,24 @@ footer{background:var(--bg);padding:5rem;border-top:.5px solid var(--bd)}
   </div>
 </section>
 
+<div class="pm" id="portfolio-modal" role="dialog" aria-modal="true" aria-labelledby="portfolio-modal-title" hidden>
+  <div class="pmd" role="document">
+    <button class="pmc" type="button" data-portfolio-close aria-label="Close portfolio preview">×</button>
+    <div class="pmv">
+      <img id="portfolio-modal-image" src="public/assets/portfolio/sample-portfolio-01.svg" alt="Sample portfolio image"/>
+    </div>
+    <div class="pms">
+      <h3 id="portfolio-modal-title">Portfolio Preview</h3>
+      <p>Temporary sample portfolio image. Final portfolio imagery will be added later.</p>
+      <p id="portfolio-modal-count">Image 1 of 1</p>
+      <div class="pmn">
+        <button class="pmb" type="button" data-portfolio-prev>Previous</button>
+        <button class="pmb" type="button" data-portfolio-next>Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- INDUSTRIES -->
 <section id="industries">
@@ -529,10 +607,27 @@ footer{background:var(--bg);padding:5rem;border-top:.5px solid var(--bd)}
 <section id="cta">
   <h2>Ready to Build Something<br>That Lasts?</h2>
   <p>Tell us about your brand. We'll tell you what it takes to make it unforgettable — in every market, across every format, through every sign and surface.</p>
+  <p class="cem">Email us at <a href="mailto:hello@fogandhammer.com">hello@fogandhammer.com</a></p>
   <div class="cas">
     <a class="bdk" href="mailto:hello@fogandhammer.com">Start a Conversation</a>
     <a class="bdo" href="#portfolio">View Our Work</a>
   </div>
+  <form class="cf" id="contact-form" action="/api/enquiry" method="post" novalidate>
+    <div class="cfg">
+      <label for="contact-name">Name</label>
+      <input id="contact-name" name="name" type="text" autocomplete="name" required/>
+    </div>
+    <div class="cfg">
+      <label for="contact-email">Email</label>
+      <input id="contact-email" name="email" type="email" autocomplete="email" required/>
+    </div>
+    <div class="cfg full">
+      <label for="contact-message">Message</label>
+      <textarea id="contact-message" name="message" required></textarea>
+    </div>
+    <button class="bdk" type="submit">Send Enquiry</button>
+    <p class="fs" id="contact-status" aria-live="polite"></p>
+  </form>
 </section>
 
 
@@ -577,12 +672,170 @@ footer{background:var(--bg);padding:5rem;border-top:.5px solid var(--bd)}
     </div>
   </div>
   <div class="fbot">
-    <p>© 2025 Fog &amp; Hammer. All rights reserved. National design services for brands that mean business.</p>
-    <p>Privacy Policy &nbsp;·&nbsp; Terms of Service</p>
+    <p>© 2026 Fog &amp; Hammer. All rights reserved. National design services for brands that mean business.</p>
+    <p><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a></p>
   </div>
 </footer>
 
 <script>
+const navToggle=document.querySelector('.nm');
+const mobileMenu=document.getElementById('mobile-menu');
+function closeMobileMenu(){
+  if(!navToggle||!mobileMenu)return;
+  mobileMenu.hidden=true;
+  navToggle.setAttribute('aria-expanded','false');
+  navToggle.setAttribute('aria-label','Open navigation menu');
+}
+if(navToggle&&mobileMenu){
+  navToggle.addEventListener('click',()=>{
+    const isOpen=navToggle.getAttribute('aria-expanded')==='true';
+    mobileMenu.hidden=isOpen;
+    navToggle.setAttribute('aria-expanded',String(!isOpen));
+    navToggle.setAttribute('aria-label',isOpen?'Open navigation menu':'Close navigation menu');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMobileMenu));
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&!mobileMenu.hidden){
+      closeMobileMenu();
+      navToggle.focus();
+    }
+  });
+}
+const contactForm=document.getElementById('contact-form');
+if(contactForm){
+  const statusEl=document.getElementById('contact-status');
+  const submitBtn=contactForm.querySelector('button[type="submit"]');
+  const defaultSubmitText=submitBtn.textContent;
+  const setStatus=(message,type='')=>{
+    statusEl.textContent=message;
+    statusEl.className=`fs ${type}`.trim();
+  };
+  contactForm.addEventListener('submit',async event=>{
+    event.preventDefault();
+    setStatus('');
+    if(!contactForm.checkValidity()){
+      setStatus('Please complete all fields with a valid email address.','err');
+      contactForm.reportValidity();
+      return;
+    }
+    const payload={
+      name:contactForm.elements.name.value.trim(),
+      email:contactForm.elements.email.value.trim(),
+      message:contactForm.elements.message.value.trim()
+    };
+    submitBtn.disabled=true;
+    submitBtn.textContent='Sending...';
+    setStatus('Sending your enquiry...');
+    try{
+      const response=await fetch(contactForm.action,{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(payload)
+      });
+      const result=await response.json().catch(()=>({}));
+      if(!response.ok||!result.ok)throw new Error(result.error||'Unable to send enquiry.');
+      contactForm.reset();
+      setStatus('Thank you. Your enquiry has been sent.','ok');
+    }catch(error){
+      setStatus('Sorry, the enquiry could not be sent. Please email hello@fogandhammer.com directly.','err');
+    }finally{
+      submitBtn.disabled=false;
+      submitBtn.textContent=defaultSubmitText;
+    }
+  });
+}
+const portfolioModal=document.getElementById('portfolio-modal');
+if(portfolioModal){
+  const portfolioCards=[...document.querySelectorAll('#portfolio .pw')];
+  const modalImage=document.getElementById('portfolio-modal-image');
+  const modalTitle=document.getElementById('portfolio-modal-title');
+  const modalCount=document.getElementById('portfolio-modal-count');
+  const closeBtn=portfolioModal.querySelector('[data-portfolio-close]');
+  const prevBtn=portfolioModal.querySelector('[data-portfolio-prev]');
+  const nextBtn=portfolioModal.querySelector('[data-portfolio-next]');
+  let activeCard=null;
+  let activeImageIndex=0;
+
+  // TODO: Replace these temporary sample image paths with final portfolio assets when provided.
+  const portfolioSampleImages=[
+    'public/assets/portfolio/sample-portfolio-01.svg',
+    'public/assets/portfolio/sample-portfolio-02.svg',
+    'public/assets/portfolio/sample-portfolio-03.svg'
+  ];
+
+  function getModalFocusables(){
+    return [...portfolioModal.querySelectorAll('button,[href],input,textarea,select,[tabindex]:not([tabindex="-1"])')]
+      .filter(element=>!element.disabled&&element.offsetParent!==null);
+  }
+
+  function updatePortfolioImage(){
+    const title=activeCard?.querySelector('h4')?.textContent.trim()||'Portfolio Preview';
+    modalImage.src=portfolioSampleImages[activeImageIndex];
+    modalImage.alt=`${title} sample portfolio image`;
+    modalCount.textContent=`Image ${activeImageIndex+1} of ${portfolioSampleImages.length}`;
+  }
+
+  function openPortfolioModal(card){
+    activeCard=card;
+    activeImageIndex=0;
+    modalTitle.textContent=card.querySelector('h4')?.textContent.trim()||'Portfolio Preview';
+    updatePortfolioImage();
+    portfolioModal.hidden=false;
+    document.body.classList.add('modal-open');
+    closeBtn.focus();
+  }
+
+  function closePortfolioModal(){
+    portfolioModal.hidden=true;
+    document.body.classList.remove('modal-open');
+    if(activeCard)activeCard.focus();
+    activeCard=null;
+  }
+
+  function showPortfolioImage(direction){
+    activeImageIndex=(activeImageIndex+direction+portfolioSampleImages.length)%portfolioSampleImages.length;
+    updatePortfolioImage();
+  }
+
+  portfolioCards.forEach(card=>{
+    const title=card.querySelector('h4')?.textContent.trim()||'portfolio item';
+    card.setAttribute('role','button');
+    card.setAttribute('tabindex','0');
+    card.setAttribute('aria-label',`Open ${title} portfolio preview`);
+    card.addEventListener('click',()=>openPortfolioModal(card));
+    card.addEventListener('keydown',event=>{
+      if(event.key==='Enter'||event.key===' '){
+        event.preventDefault();
+        openPortfolioModal(card);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click',closePortfolioModal);
+  prevBtn.addEventListener('click',()=>showPortfolioImage(-1));
+  nextBtn.addEventListener('click',()=>showPortfolioImage(1));
+  portfolioModal.addEventListener('click',event=>{
+    if(event.target===portfolioModal)closePortfolioModal();
+  });
+  portfolioModal.addEventListener('keydown',event=>{
+    if(event.key==='Escape'){
+      closePortfolioModal();
+      return;
+    }
+    if(event.key!=='Tab')return;
+    const focusables=getModalFocusables();
+    if(!focusables.length)return;
+    const first=focusables[0];
+    const last=focusables[focusables.length-1];
+    if(event.shiftKey&&document.activeElement===first){
+      event.preventDefault();
+      last.focus();
+    }else if(!event.shiftKey&&document.activeElement===last){
+      event.preventDefault();
+      first.focus();
+    }
+  });
+}
 function showP(id,btn){
   document.querySelectorAll('.ppanel').forEach(p=>p.classList.remove('on'));
   document.querySelectorAll('.pcat').forEach(b=>b.classList.remove('on'));

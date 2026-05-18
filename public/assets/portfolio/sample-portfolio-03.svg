@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Sample portfolio image</title>
+  <desc id="desc">Temporary portfolio placeholder image for preview modal.</desc>
+  <rect width="1600" height="1000" fill="#1D1B18"/>
+  <rect x="160" y="135" width="1280" height="730" fill="#0C0B09" stroke="#524E47" stroke-width="2"/>
+  <path d="M250 735 L570 300 L820 620 L1030 390 L1350 735 Z" fill="#C4975A" fill-opacity=".22"/>
+  <rect x="250" y="230" width="430" height="70" fill="#C4975A" fill-opacity=".45"/>
+  <rect x="250" y="340" width="330" height="34" fill="#8A8278" fill-opacity=".48"/>
+  <rect x="250" y="410" width="410" height="34" fill="#8A8278" fill-opacity=".32"/>
+  <rect x="1010" y="230" width="260" height="260" fill="#232118" stroke="#C4975A" stroke-opacity=".28" stroke-width="2"/>
+  <text x="800" y="790" text-anchor="middle" fill="#EDE8DE" fill-opacity=".84" font-family="Georgia, serif" font-size="66">Sample Portfolio Image</text>
+  <text x="800" y="843" text-anchor="middle" fill="#C4975A" fill-opacity=".8" font-family="Arial, sans-serif" font-size="28" letter-spacing="6">TEMPORARY ASSET</text>
+</svg>
